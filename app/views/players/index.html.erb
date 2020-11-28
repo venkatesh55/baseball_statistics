@@ -1,0 +1,26 @@
+<div class="table-responsive">
+	<table class="table table-striped">
+		<caption style="caption-side: top;">List of Players</caption>
+		<thead>
+			<tr>
+				<th><%= sortable "given_name", 'Name' %></th>
+				<th><%= sortable "rbi" %></th>
+			  <th><%= sortable "runs" %></th>
+				<th><%= sortable "home_runs", 'Home Runs' %></th>
+				<th><%= sortable "avg" %></th>
+			  <th><%= sortable "ops" %></th>
+			</tr>
+		</thead>
+		<% @players.each do |player| %>
+			<tr>
+				<td><%= player.given_name %></td>
+				<td><%= player.rbi %></td>
+				<td><%= player.runs %></td>
+				<td><%= player.home_runs %></td>
+				<td><%= player.avg %></td>
+				<td><%= player.ops %></td>
+			</tr>
+		<% end %>
+		<!-- <%= will_paginate @players %> -->
+	</table>
+</div>
