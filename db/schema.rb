@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_11_28_141917) do
     t.string "name"
   end
 
-  create_table "league_participation", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "league_participations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "league_id"
     t.integer "team_id"
     t.integer "player_id"

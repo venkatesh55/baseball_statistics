@@ -1,5 +1,6 @@
 class Player < ApplicationRecord
   has_many :teams, through: :league_paticipations
+  has_many :league_paticipations
 
   before_save :calculate_avg, :if => :any_avg_fields_changed?
   before_save :calculate_ops, :if => :any_ops_fields_changed?
