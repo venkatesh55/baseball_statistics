@@ -1,8 +1,10 @@
 class PlayersController < ApplicationController
-  helper_method :sort_column, :sort_direction
+  helper_method :sort_column, :sort_direction, :sort_year
   
   def index
-    @players = Player.order(sort_column + " " + sort_direction).paginate(page: params[:page], per_page: 25)
+    season = params[:year] ? Season.find_by(year: params[:year]) : Season.first
+    @players = season.players.order(sort_column + " " + sort_direction).paginate(page: params[:page], per_page: 25) if season
+    @years = Season.all.map(&:year)
   end
 
   private
@@ -13,5 +15,9 @@ class PlayersController < ApplicationController
   
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+
+  def sort_year
+    Season.all.map(&:year).include?(params[:year]) ? params[:year] : Season.first.year
   end
 end

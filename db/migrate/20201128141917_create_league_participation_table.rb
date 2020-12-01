@@ -4,6 +4,7 @@ class CreateLeagueParticipationTable < ActiveRecord::Migration[5.2]
       t.integer :league_id
       t.integer :team_id
       t.integer :player_id
+      t.integer :season_id
     end
   end
 end

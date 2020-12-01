@@ -31,7 +31,7 @@ def seed_data
               player.send("#{attr_name}=", value)
             end
             player.save
-            LeagueParticipation.create(league: league, player: player, team: team)
+            LeagueParticipation.create(league: league, player: player, team: team, season: season)
           end
         end
       end

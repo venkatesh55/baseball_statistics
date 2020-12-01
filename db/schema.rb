@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_11_28_141917) do
     t.integer "league_id"
     t.integer "team_id"
     t.integer "player_id"
+    t.integer "season_id"
   end
 
   create_table "leagues", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

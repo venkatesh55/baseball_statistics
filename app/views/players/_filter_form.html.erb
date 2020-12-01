@@ -1,0 +1,6 @@
+<%= form_tag( {:action => 'index'}, :method => 'get') do %>
+	<div class="form-group">
+	  <%= select_tag :year, options_for_select(@years), class: "form-control m-2" %>
+	</div>
+	<%= submit_tag 'Apply Filter', class: "btn btn-primary" %>
+<% end %>
