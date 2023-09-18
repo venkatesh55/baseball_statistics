@@ -21,5 +21,5 @@ class PlayersController < ApplicationController
     Season.all.map(&:year).include?(params[:year]) ? params[:year] : Season.first.year
   end
 
-  #git_training
+  #git_training.
 end
