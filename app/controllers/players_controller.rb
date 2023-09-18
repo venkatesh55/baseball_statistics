@@ -20,4 +20,6 @@ class PlayersController < ApplicationController
   def sort_year
     Season.all.map(&:year).include?(params[:year]) ? params[:year] : Season.first.year
   end
+
+  #git_training
 end
